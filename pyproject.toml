@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dig"
+version = "0.1.0"
+description = "DIG -- Dynamic Interaction Graph observability for multi-agent systems"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = [
+    "multi-agent",
+    "llm-agents",
+    "observability",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# DIG core is LLM- and environment-agnostic; visualization and docs ship by
+# default because this research package has one editable install surface.
+dependencies = [
+    "matplotlib>=3.7",
+    "plotly>=5.0",
+    "sphinx",
+    "myst-parser",
+    "furo",
+]
+
+[project.urls]
+Repository = "https://github.com/HappyEureka/dig"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dig*"]
+exclude = ["examples*", "docs*"]
+
+[tool.setuptools.package-data]
+"dig.viz.html" = ["assets/*"]

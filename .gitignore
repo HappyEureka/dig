@@ -1,0 +1,25 @@
+# Secrets -- never commit environment files.
+.env
+.env.*
+*.env
+
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+
+docs/_build/
+
+# Virtualenvs
+.venv/
+venv/
+
+# Example/run artifacts
+dig_artifacts/
+*.png
+!docs/**/*.png
+
+.pytest_cache/
+
+.DS_Store
